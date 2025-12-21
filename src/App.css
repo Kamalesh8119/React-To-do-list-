@@ -1,0 +1,197 @@
+/* =====================
+   THEME VARIABLES
+===================== */
+:root {
+  --bg: #eef2f5;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --toggle-off: #ef4444;
+  --shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+body.dark {
+  --bg: #0f172a;
+  --card: #020617;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #3b82f6;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --toggle-off: #dc2626;
+  --shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* =====================
+   GLOBAL
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =====================
+   APP LAYOUT
+===================== */
+.app {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Header (Title OUTSIDE box) */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  font-size: 26px;
+}
+
+.theme-toggle {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* =====================
+   CARD
+===================== */
+.container {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+/* =====================
+   INPUT SECTION
+===================== */
+.input-section {
+  display: grid;
+  grid-template-columns: 1fr 150px auto;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.input-section input,
+.input-section button {
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.input-section input {
+  border: 1px solid #d1d5db;
+  background: transparent;
+  color: var(--text);
+}
+
+.input-section button {
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+/* =====================
+   TODO LIST
+===================== */
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.todo-item {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 18px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-item.completed {
+  background: rgba(34, 197, 94, 0.15);
+}
+
+/* Info */
+.todo-text {
+  font-weight: 600;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--success);
+}
+
+.todo-date {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =====================
+   ACTIONS
+===================== */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Toggle */
+.switch {
+  width: 140px;
+  height: 36px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  height: 100%;
+  border-radius: 50px;
+  background: var(--toggle-off);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.switch input:checked + .slider {
+  background: var(--success);
+}
+
+/* Delete */
+.delete-btn {
+  background: var(--danger);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
